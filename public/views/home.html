@@ -1,0 +1,28 @@
+<section class="ads" ng-click="vm.toggleAdsNone(1)" ng-mousemove="vm.toggleAdsNone(1)" ng-show="vm.show" >
+    <div class="slider">
+        <p>asass</p>
+    </div>
+    <h1>{{vm.pay}}</h1>
+</section>
+
+<section class="header" ng-click="vm.resetTimer()">
+    <div class="nav">
+        <div class="search">
+            <input class="search__input" type="text" placeholder="Search..."/>
+            <img class="search__icon" src="#"></img>
+        </div>
+    </div>
+    <div class="amenities">
+        <div class="serv" ng-repeat="serv in vm.services" ui-sref="pay({id: serv.id})">
+            <div class="serv__bcgrnd">
+                <img class="serv__bcgrnd__img" ng-src="{{serv.img}}" alt="">
+            </div>
+        </div>
+        <div class="serv" ui-sref="sections()">
+            <div class="serv__bcgrnd">
+                <img class="serv__bcgrnd__img" src="../images/more.png" alt="">
+            </div>
+        </div>
+
+    </div>
+</section>

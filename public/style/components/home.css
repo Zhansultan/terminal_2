@@ -1,0 +1,98 @@
+.ads {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    transition: .2s ease-out;
+    background: url('../../images/25597062-spectacular-scenic-big-almaty-lake-tien-shan-mountains-in-almaty-kazakhstan-asia-at-summer.jpg');
+    background-repeat: no-repeat;
+}
+    .slider {
+      width: 100%;
+      height: 100%;
+    }
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0% 5%;
+}
+.nav {
+    width: 100%;
+    background: rgba(0,0,1,.5);
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+    .search {
+
+    }
+        .search__input {
+            outline: none;
+            border: 1px solid #343434;
+            border-radius: 3px;
+            padding: 7px;
+        }
+
+.amenities {
+    width: 100%;
+    /* background: rgba(125,0,0,.5); */
+    margin: 0 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+    .serv {
+        width: 20%;
+        height: 200px;
+        border: 1px solid #897855;
+        margin: 15px;
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+        .serv__bcgrnd {
+            width: 100%;
+            height: 100%;
+        }
+            .serv__bcgrnd__img {
+                width: 100%;
+                height: 100%;
+            }
+/* .ads.active {
+    display: none;
+    transition: .2s all ease-out;
+} */
+
+.adminPanel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    cursor: pointer;
+}
+    .adminPanel__text {
+        border-radius: 5px;
+        padding: 4px;
+        background: rgba(0,0,0,.2);
+    }
+
+.adminPanel__text:hover {
+    background: #897855;
+    transition: .2s all ease-in;
+    color: #fff;
+}
+.serv:hover {
+    transition: all .3s ease-out;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+.search__input:hover {
+    transition: all .3s ease-out;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+    

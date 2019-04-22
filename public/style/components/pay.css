@@ -1,0 +1,180 @@
+.container {
+    padding: 0% 5%;
+
+}
+
+    .firstLayout {
+        /* display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap; */
+    }
+        .phone {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+            .phone__title {
+                text-align: center;
+                width: 100%;
+            }
+                .phone__title--text {
+                    font-size: 30px;
+                }
+            .phone__number {
+                width: 100%;
+                text-align: center;
+            }
+                .phone__number--numb {
+                    margin: 30px;
+                    outline: none;
+                    padding: 11px;
+                    cursor: pointer;
+                    border: 1px solid #343434;
+                    border-radius: 7px;
+                    font-size: 30px;
+                    text-align: center;
+                }
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+            .prev, 
+                .next {
+                    padding: 15px 50px;
+                    border-radius: 5px;
+                    border: 1px solid #343434;
+                    font-weight: 600;
+                    font-size: 30px;
+                    cursor: pointer;
+            }
+            .prev {
+                background: #444857;
+                color: #fff;
+            }
+            .next {
+                background: #ffdd40;
+            }
+    .secondLayout {
+
+    }
+        .confirmation {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+        }
+            .confirmation__number {
+                padding: 10px;
+                background: #ffdc61;
+                border: 1px solid #343434;
+                border-radius: 7px;
+                font-size: 34px;
+                font-weight: 700;
+                margin: 30px;
+            }
+    .thirdLayout {
+
+    }
+        .payment-acceptance {
+            margin: 30px;
+        }
+            .payment-acceptance__phone {
+                clear: both;
+                text-align: right;
+                line-height: 25px;
+                font-size: 30px;
+                padding: 17px 0;
+                border-bottom: 1px dashed #343434;
+            }
+            .payment-acceptance__text {
+                float: left;
+                padding-right:10px;
+            }
+            .payment-acceptance__numb {
+                clear:both; 
+                text-align:right;
+            }
+            .payment-acceptance > span {
+                clear: both;
+                text-align: right;
+                line-height: 25px;
+                font-size: 30px;
+                padding: 17px 0;
+            }
+        .completion-payment {
+            font-size: 30px;
+            margin: 30px;
+            line-height: 1.6em;
+            font-weight: 800;
+            background: rgba(0,0,0,.3);
+            padding: 50px;
+            box-sizing: border-box;
+            border-radius: 9px;
+        }
+    .home {
+        background: #ffdd40;
+        padding: 15px 50px;
+        border-radius: 5px;
+        border: 1px solid #343434;
+        font-weight: 600;
+        font-size: 30px;
+        cursor: pointer;
+    }
+    .footer-fourth {
+        justify-content: center;
+    }
+.fourthLayout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.internet {
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+    .f {
+        width: 100%;
+        text-align: center;
+    }
+    .f > label {
+        display: block;
+        font-size: 24px;
+    }
+    .f > input {
+        margin: 20px 0;
+        border: 1px solid #343434;
+        padding: 10px;
+        border-radius: 6px;
+        width: 530px;
+        font-size: 24px;
+        outline: none;
+    }
+.cContent {
+    width: 100%;
+    text-align: center;
+    margin: 21px 0;
+    font-size: 30px;
+    font-weight: 800;
+}
+.cContent > span {
+    background: #d6ecfb;
+    border-radius: 8px;
+    padding: 14px 10px;
+}
+
+.keyboard {
+    position: fixed;
+    background-color: #343434;
+    border: 1px solid red;
+}

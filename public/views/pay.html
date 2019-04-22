@@ -1,0 +1,113 @@
+<section class="container">
+    <section class="firstLayout" ng-show="vm.status == 1">
+<!-- writes data -->
+        <section class="phone" ng-if="vm.service.type == 'phone'">
+            <div class="phone__title"> 
+                    <span class="phone__title--text">Введите номер телефона</span>
+            </div>
+            <div class="phone__number">
+                    <input class="phone__number--numb" id="phone" type="tel" placeholder="+7(___)___-_____" ng-model="vm.phone">
+            </div>
+        </section>
+        <section class="internet" ng-if="vm.service.type == 'cabinet_id'">
+            <div class="f" ng-repeat="inp in vm.service.fields track by $index">
+                <label for="input">{{inp.name}}</label>
+                <input name="input" type="{{inp.type}}" class="internet__input" placeholder="sss" ng-model="vm.interInput[$index]">
+            </div>
+        </section>
+        <section class="footer">
+            <div class="prev" ng-click="vm.prevLayout()">
+                Назад
+            </div>
+            <div class="next" ng-click="vm.nextLayout()">
+                Вперед
+                </div>
+        </section>
+        <section class="keyboard">
+            
+        </section>
+    </section>
+    <section class="secondLayout" ng-show="vm.status == 2">
+<!-- data validation  -->
+        <div class="confirmation" ng-if="vm.service.type == 'phone'">
+            <span ng-bind="vm.phone" class="confirmation__number"></span>
+        </div>
+        <div class="confirmation" ng-if="vm.service.type == 'cabinet_id'">
+            <div class="cContent" ng-repeat="input in vm.interInput">
+                <span ng-bind="input"></span>
+            </div>
+        </div>
+        <section class="footer">
+                <div class="prev" ng-click="vm.prevLayout()">
+                    Назад
+                </div>
+                <div class="next" ng-click="vm.nextLayout()">
+                    Вперед
+                    </div>
+        </section>
+    </section>
+    <section class="thirdLayout" ng-show="vm.status == 3">
+<!-- payment and loading -->
+        <div class="payment-acceptance" ng-if="vm.service.type == 'phone'">
+            <span class="" ng-bind="vm.phone"></span>
+            <div class="payment-acceptance__phone">
+                <span class="payment-acceptance__text">Сумма</span>
+                <span class="payment-acceptance__numb">500</span>
+            </div>
+            <div class="payment-acceptance__phone">
+                <span class="payment-acceptance__text">Комиссия</span>
+                <span class="payment-acceptance__numb">30</span>
+            </div>
+            <div class="payment-acceptance__phone">
+                <span class="payment-acceptance__text">К зачислению</span>
+                <span class="payment-acceptance__numb">470</span>
+            </div>
+        </div>
+        <div class="payment-acceptance" ng-if="vm.service.type == 'cabinet_id'">
+            <div class="payment-acceptance__phone" ng-repeat="input in vm.interInput track by $index">
+                <span class="payment-acceptance__text" ng-bind="$index"></span>
+                <span class="payment-acceptance__numb" ng-bind="input"></span>
+            </div>
+            <div class="payment-acceptance__phone">
+                    <span class="payment-acceptance__text">Сумма</span>
+                    <span class="payment-acceptance__numb">500</span>
+                </div>
+                <div class="payment-acceptance__phone">
+                    <span class="payment-acceptance__text">Комиссия</span>
+                    <span class="payment-acceptance__numb">30</span>
+                </div>
+                <div class="payment-acceptance__phone">
+                    <span class="payment-acceptance__text">К зачислению</span>
+                    <span class="payment-acceptance__numb">470</span>
+                </div>
+        </div>
+        <section class="footer">
+                <div class="prev" ng-click="vm.prevLayout()">
+                    Назад
+                </div>
+                <div class="next" ng-click="vm.nextLayout()">
+                    Вперед
+                    </div>
+        </section>
+    </section>
+    <section class="fourthLayout" ng-show="vm.status == 4">
+        <div class="completion-payment" ng-if="vm.service.type == 'phone'">
+            <span class="" ng-bind="vm.phone"></span>
+            <span> Зачислено </span>
+            <span class=""> 470 </span>
+        </div>
+        <div class="completion-payment" ng-if="vm.service.type == 'cabinet_id'">
+            <div ng-repeat="input in vm.interInput">
+                <span ng-bind="input"></span>
+            </div>
+            <span> Зачислено </span>
+            <span class=""> 470 </span>
+        </div>
+        <section class="footer footer-fourth">
+                <div class="home" ng-click="vm.home()">
+                    На главную
+                </div>
+        </section>
+<!-- success payment -->
+    </section>
+</section>

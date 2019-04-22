@@ -1,0 +1,10 @@
+@import url('/style/vendor/reset.css');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+@import url('/style/components/fonts.css');
+@import url('/style/components/header.css');
+@import url('/style/components/profile.css');
+@import url('/style/components/home.css');
+@import url('/style/components/admin.css');
+@import url('/style/components/pay.css');
+@import url('/style/components/sections.css');
+@import url('/style/components/sectionServices.css');

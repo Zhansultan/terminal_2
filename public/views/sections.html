@@ -1,0 +1,12 @@
+<section class="sections">
+    <div class="section" ng-repeat="section in vm.sections" ui-sref="sectionServices({id: section.id})">
+        <div class="section__cont" >
+            <div class="">
+                <img class="section__cont--img" ng-src="{{section.img}}" alt="">
+            </div>
+            <div class="content__title">
+                <span class="section__cont--title" ng-bind="section.title"></span>
+            </div>
+        </div>
+    </div>
+</section>

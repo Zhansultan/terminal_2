@@ -1,0 +1,81 @@
+<section class="admin">
+    <!-- <div class="elements" ng-click="vm.showAddSection()">
+        <img class="addImg" src="../images/add.svg" alt="" >
+        <span class="newSection">Add new Section</span>
+    </div> -->
+    <section class="elements">
+        <div class="sections">
+            <div>Sections</div>
+            <div class="addSection" ng-click="vm.showAddSection()">
+                <div class="addSection-cont">
+                    <img class="addImg" src="../images/add.svg" alt="">
+                    <span class="newSection">Добавить новую секцию</span>
+                </div>
+            </div>
+            <div class="itemSection" ng-repeat="sect in vm.sections">
+                <div class="sectionImg">
+                    <img src="{{sect.img}}" alt="">
+                </div>
+                <div class="sectionText">
+                    <span class="sectionText__text" ng-bind="sect.title">
+
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="services">
+                <div>Services</div>
+                <div class="addSection" ng-click="vm.showAddService()">
+                    <div class="addSection-cont">
+                        <img class="addImg" src="../images/add.svg" alt="">
+                        <span class="newSection">Добавить новый сервис</span>
+                    </div>
+                </div>
+                <div class="itemSection" ng-repeat="serv in vm.services">
+                    <div class="sectionImg">
+                        <img src="{{serv.img}}" alt="">
+                    </div>
+                    <div class="sectionText">
+                        <span class="sectionText__text" ng-bind="serv.title">
+    
+                        </span>
+                    </div>
+                </div>
+        </div>
+    </section>
+</section>
+
+
+<section class="modalAddSection" ng-show="vm.section">
+    <form class="modalAddForm" ng-submit="vm.addSection()">
+        <img class="modalForm__cancel" src="../images/cancel.svg" alt="" ng-click="vm.showAddSection()">
+        <span class="modalForm__title">Добавление секции</span>
+        <input type="text" placeholder="Title" class="modalForm__input" ng-model="vm.title">
+        <input type="file" class="modalForm__file" file-model="vm.file">
+        <div class="modalForm__btn-cont">
+            <input type="submit" class="modalForm__btn" value="Submit">
+        </div>
+    </form>
+    <div class="modalAddBackdrop" ng-click="vm.showAddSection()"></div>
+</section>
+
+<section class="modalAddSection" ng-show="vm.service">
+        <form class="modalAddForm" ng-submit="vm.addService()">
+            <img class="modalForm__cancel" src="../images/cancel.svg" alt="" ng-click="vm.showAddService()">
+            <span class="modalForm__title">Добавление сервиса</span>
+            <input type="text" placeholder="Title" class="modalForm__input" ng-model="vm.serviceTitle">
+            <!-- <select ng-model="vm.serviceSection" ng-options="ss.title for ss in vm.sections">
+                <option value="">Выберите сервис</option>
+            </select>
+            <select ng-model="vm.serviceType" ng-options="type.type for type in vm.types">
+                <option value="">Выберите тип</option>
+            </select> -->
+            <input type="text" ng-model="vm.serviceSection" placeholder="Select Service">
+            <input type="text" ng-model="vm.serviceType" placeholder="Select Type">
+            <input type="file" class="modalForm__file" file-model="vm.serviceFile">
+            <div class="modalForm__btn-cont">
+                <input type="submit" class="modalForm__btn" value="Submit">
+            </div>
+        </form>
+        <div class="modalAddBackdrop" ng-click="vm.showAddService()"></div>
+    </section>

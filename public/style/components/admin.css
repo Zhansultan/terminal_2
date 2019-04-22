@@ -1,0 +1,168 @@
+.admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+    .elements {
+
+    }
+        .addImg {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+        }
+        .newSection {
+            display: block;
+        }
+    .sections {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+.addSection {
+    width: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+    padding: 16px;
+    height: 320px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all .3s ease-in;
+} 
+    .addSection-cont {
+        text-align: center;
+        height: 130px;
+        padding: 15px;
+        transition: all .3s ease-in;
+    }
+
+.itemSection {
+    width: 280px;
+    border: 1px solid #eee;
+    position: relative;
+    margin-bottom: 40px;
+    overflow: hidden;
+    margin: 10px;
+}
+    .sectionImg {
+        width: 100%;
+        height: 200px;
+    }
+    .sectionText {
+        height: 120px;
+        text-align: center;
+    }
+    .sectionText > span {
+        background: rgba(0,0,0,.8);
+        padding: 10px;
+        margin-top: 15px;
+        border-radius: 5px;
+        color: white;
+    }
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+.modalAddSection {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    animation: modalAnimation .5s forwards;
+}
+    .modalAddForm {
+        background-color: #fff;
+        position: relative;
+        z-index: 1;
+        min-width: 300px;
+        width: 40%;
+        box-sizing: border-box;
+        margin: 0px auto;
+        border-radius: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+        .modalForm__cancel {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+            opacity: .6;
+        }
+        .modalForm__title {
+            display: block;
+            font-size: 25px;
+            color: rgba(0, 0, 0, .6);
+            text-align: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .modalForm__input {
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid #eee;
+            outline: none;
+            border-radius: 4px;
+            width: 100%;
+            margin-bottom: 15px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .modalForm__file {
+            text-align: center;
+            width: 100%;
+        }
+        .modalForm__btn-cont {
+            width: 100%;
+            margin: 10px;
+        }
+            .modalForm__btn {
+                display: block;
+                padding: 10px 50px;
+                font-size: 16px;
+                border: none;
+                border-radius: 4px;
+                color: #fff;
+                background-color: rgba(0, 108, 240, 1);
+                margin: 15px auto;
+                cursor: pointer;
+                outline: none;
+            }
+    .modalAddBackdrop {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+
+.addSection-cont:hover {
+    background: rgba(0,0,0,.3);
+    border-radius: 5px;
+}
+
+@keyframes modalAnimation {
+    from {
+      opacity: 0;
+      margin: 0 auto;
+    }
+  
+    to {
+      opacity: 1;
+      margin: 100px auto;
+    }
+  }

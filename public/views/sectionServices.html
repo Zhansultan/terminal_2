@@ -1,0 +1,9 @@
+<section class="sectionServices">
+    <div class="serv" ng-repeat="service in vm.services" ui-sref="pay({id: service.id})">
+        <div class="serv__bcgrnd">
+            <img class="serv__bcgrnd__img" ng-src="{{service.img}}" alt="">
+        </div>
+        <!-- <span ng-bind="service.title"></span> -->
+        
+    </div>
+</section>
