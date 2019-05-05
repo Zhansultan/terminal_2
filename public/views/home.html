@@ -8,8 +8,11 @@
 <section class="header" ng-click="vm.resetTimer()">
     <div class="nav">
         <div class="search">
-            <input class="search__input" type="text" placeholder="Search..."/>
+            <input class="search__input" type="text" placeholder="Search..." ng-model="vm.serchStr" ng-click="vm.showKBoard()">
             <img class="search__icon" src="#"></img>
+        </div>
+        <div>
+            <h1 ng-bind="vm.resS.title" ui-sref="pay({id: vm.resS.id})"></h1>
         </div>
     </div>
     <div class="amenities">
@@ -24,5 +27,74 @@
             </div>
         </div>
 
+    </div>
+</section>
+<section class="keyboard-email keyboard-search" ng-if="vm.showKeyBoard">
+    <div class="keyboard-email-container" ng-click="vm.srch()">
+        <div class="keyboard-email-cont keyboard-email-1">
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('1', vm.clicked)">1</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('2', vm.clicked)">2</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('3', vm.clicked)">3</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('4', vm.clicked)">4</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('5', vm.clicked)">5</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('6', vm.clicked)">6</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('7', vm.clicked)">7</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('8', vm.clicked)">8</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('9', vm.clicked)">9</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('0', vm.clicked)">0</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('-', vm.clicked)">-</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('=', vm.clicked)">=</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('delete', vm.clicked)">Del</button>
+            <div class="keyboard-close" ng-click="vm.showKeyBoard = 0"><img class="close-keyboard" src="../images/close.svg" alt=""></div>
+        </div>
+        <div class="keyboard-email-cont keyboard-email-2">
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('Q', vm.clicked)">Q</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('W', vm.clicked)">W</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('E', vm.clicked)">E</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('R', vm.clicked)">R</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('T', vm.clicked)">T</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('Y', vm.clicked)">Y</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('U', vm.clicked)">U</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('I', vm.clicked)">I</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('O', vm.clicked)">O</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('P', vm.clicked)">P</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('[', vm.clicked)">[</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress(']', vm.clicked)">]</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('\\', vm.clicked)">\</button>
+        </div>
+        <div class="keyboard-email-cont keyboard-email-2">
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('A', vm.clicked)">A</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('S', vm.clicked)">S</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('D', vm.clicked)">D</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('F', vm.clicked)">F</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('G', vm.clicked)">G</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('H', vm.clicked)">H</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('J', vm.clicked)">J</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('K', vm.clicked)">K</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('L', vm.clicked)">L</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress(';', vm.clicked)">;</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('\'', vm.clicked)">'</button>
+        </div>
+        <div class="keyboard-email-cont keyboard-email-2">
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('Z', vm.clicked)">Z</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('X', vm.clicked)">X</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('C', vm.clicked)">C</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('V', vm.clicked)">V</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('B', vm.clicked)">B</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('N', vm.clicked)">N</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('M', vm.clicked)">M</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress(',', vm.clicked)">,</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('.', vm.clicked)">.</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('/', vm.clicked)">/</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('shift', vm.clicked)">SHIFT</button>
+        </div>
+        <div class="keyboard-email-cont keyboard-email-2">
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('ctrl', vm.clicked)">CTRL</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('alt', vm.clicked)">ALT</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('space', vm.clicked)">SPACE</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('alt', vm.clicked)">ALT</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('ctrl', vm.clicked)">CTRL</button>
+            <button class="keyboard-email-1__el" ng-click="vm.keyPress('clear', vm.clicked)">Clear</button>
+        </div>
     </div>
 </section>

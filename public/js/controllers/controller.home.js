@@ -18,7 +18,8 @@ angular.module('term')
                 fields: [{
                     name: 'phone',
                     mask: 'phone',
-                    type: 'text'
+                    type: 'text',
+                    num: 0
                 }],
                 id: 1
             },
@@ -30,7 +31,8 @@ angular.module('term')
                 fields: [{
                     name: 'phone',
                     mask: 'phone',
-                    type: 'text'
+                    type: 'text',
+                    num: 0
                 }],
                 id: 3
             },
@@ -42,7 +44,8 @@ angular.module('term')
                 fields: [{
                     name: 'phone',
                     mask: 'phone',
-                    type: 'text'
+                    type: 'text',
+                    num: 0
                 }],
                 id: 4
             },
@@ -54,7 +57,8 @@ angular.module('term')
                 fields: [{
                     name: 'card_id',
                     mask: 'card_id',
-                    type: 'text'
+                    type: 'text',
+                    num: 0
                 }],
                 id: 5
             },
@@ -66,7 +70,8 @@ angular.module('term')
                 fields: [{
                     name: 'cabinet_id',
                     mask: 'cabinet_id',
-                    type: 'text'
+                    type: 'text',
+                    num: 0
                 }],
                 id: 6 
             },
@@ -78,7 +83,8 @@ angular.module('term')
                 fields: [{
                     name: 'phone',
                     mask: 'phone',
-                    type: 'text'
+                    type: 'text',
+                    num: 0
                 }],
                 id: 7 
             },
@@ -90,12 +96,15 @@ angular.module('term')
                 fields: [{
                     name: 'email',
                     mask: 'email',
-                    type: 'text'
+                    type: 'text',
+                    pattern: '/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/',
+                    num: 0
                 },
                 {
                     name: 'cabinet_id',
                     mask: 'olx_cabinet_id',
-                    type: 'text'
+                    type: 'text',
+                    num: 1        
                 }],
                 id: 8 
             }];
@@ -125,7 +134,34 @@ angular.module('term')
                     services: [5],
                     id: 4
                 }
-            ]
+            ];
+        
+        $rootScope.keyboard = [
+            {
+                lang: 'eng',
+                chars: [
+                    {
+                        firstCondition: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '='],
+                        secondCondition: ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+']
+                    },
+                    {
+                        firstCondition: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\'],
+                        secondCondition: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '{', '}', '|']
+                    },
+                    {
+                        firstCondition: ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '"'],
+                        secondCondition: ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ':', '"']
+                    },
+                    {
+                        firstCondition: ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/'],
+                        secondCondition: ['z', 'x', 'c', 'v', 'b', 'n', 'm', '<', '>', '?']
+                    },
+                    {
+                        firstCondition: ['Ctrl', 'Alt', 'Space', 'Rus']
+                    }
+                ]
+            }
+        ]
             
         vm.services = $rootScope.services;
         vm.toggleAdsNone = function(index) {
@@ -151,17 +187,74 @@ angular.module('term')
               
         };
           
-        vm.resetTimer = function () { 
-            clearTimeout(t); 
+        // vm.resetTimer = function () { 
+        //     clearTimeout(t); 
                         
-            t = setTimeout(vm.logout, 1000);
-            console.log('call resetTimer');
+        //     t = setTimeout(vm.logout, 1000);
+        //     console.log('call resetTimer');
             
-        };
+        // };
 
-        
+        vm.serchStr = '';
           
 
-        
+        vm.matchInArray = function(string, expressions) {
 
+            var len = expressions.length;
+            
+            for (var i = 0; i < len; i++) {
+                if (expressions[i].title.toUpperCase().includes(string)) {
+                    console.log('i = ' + i);
+                    return expressions[i];
+                }
+            }
+        
+            return false;
+        
+        }
+
+        console.log('$rootScope.services = ');
+        console.log($rootScope.services);
+        vm.resS = [];
+        vm.srch = function() {
+            vm.resS =  vm.matchInArray(vm.serchStr, $rootScope.services);
+            console.log('vm.resS = ');
+            console.log(vm.resS);
+            console.log('typeof = '+typeof(vm.resS));
+            console.log('length = '+vm.resS.length);
+        }
+        
+        console.log(vm.srch);
+
+
+        vm.showKBoard = function() {
+            vm.showKeyBoard = 1;
+        }
+
+
+        vm.keyPress = function(arg, index) {
+            console.log(arg);
+            if(arg == 'delete') {
+                vm.serchStr = vm.serchStr.substring(0, vm.serchStr.length - 1)
+            }
+            else if(arg == 'clear') {
+                vm.serchStr = '';
+            }
+            else if(arg == 'ctrl' || arg == 'alt' || arg == 'shift') {
+                vm.serchStr += '';
+            }
+            else if(arg == 'space') {
+                vm.serchStr += ' ';
+            }
+            else {
+                if(vm.serchStr == undefined) {
+                    vm.serchStr = '';
+                }
+                vm.serchStr += arg;
+            }
+        }
+
+        vm.searchText = function() {
+
+        }
     }
